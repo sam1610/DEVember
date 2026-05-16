@@ -17,9 +17,11 @@ import {
 import * as SplashScreen from 'expo-splash-screen';
 import AnimatedSplashScreen from '@/components/day4/AnimatedSplashScreen';
 import Animated, { FadeIn } from 'react-native-reanimated';
-
+import { Amplify } from "aws-amplify";
+import config from "@/amplifyconfiguration.json"
 // SplashScreen.preventAutoHideAsync();
 
+Amplify.configure(config);
 export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
   const [splashAnimationFinished, setSplashAnimationFinished] = useState(false);
